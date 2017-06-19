@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="superheros__modelo_tree" model="ir.ui.view">
+			<field name="name">superheros.modelo.tree</field>
+			<field name="model">superheros.modelo</field>
+				<field name="arch" type="xml">
+					<tree string ="Listado de Super Heroes">
+						<field name="nombre" />
+						<field name="poder" />
+						<field name="equipo" />
+						<field name="puntuacion"/>
+					</tree>
+				</field>
+		</record>
+		
+		<record id="superheros_modelo_form" model="ir.ui.view">
+			<field name="name">superheros.modelo.form</field>
+			<field name="model">superheros.modelo</field>
+				<field name="arch" type="xml">
+					<form string = "Formulario de Super Heroes" version="9.0">
+					<sheet>
+					<group>
+						<field name="nombre" />
+						<field name="poder" />
+						<field name="equipo" />
+						<field name="puntuacion" />
+						<field name="active" />
+					</group>
+					</sheet>
+				    </form>
+				</field>
+		</record>
+		
+		<record id="superheros_modelo_action" model="ir.actions.act_window">
+			<field name="name">Super heroes</field>
+			<field name="res_model">superheros.modelo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="superheros_modelo_menu" name="SuperHeroes"/>
+		<menuitem id="superheros_modelo_submenu" name="SuperHeroes" parent="superheros_modelo_menu" sequence="0"/>
+		<menuitem id="superheros_modelo_menu_action" name="SuperHeroes" parent="superheros_modelo_submenu" sequence="0" action="superheros_modelo_action"/>
+	</data>
+</openerp>	
+		
+		
+		
+		
